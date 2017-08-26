@@ -1,26 +1,25 @@
+
 class node{
 private:
-	char*  chromosome;
-	int    chromosome_length;
-	int    crossover_point;
-	float  ftness;
-	float  mutation_rate;
+	string _chromosome;
+	int    _chromosome_length;
+	int    _crossover_point;
+	float  _fitness;
+	float  _mutation_rate;
 
 public:
-	node( char* chromosome );
+	node( string chromosome );
 
 	float getFitness();
 	float getMutationRate();
 	int getCrossoverPoint();
 	int getChromosomeLength();
-	char* getChromosome();
+	string getChromosome();
 	
-	void setCrossoverPoint(int cross_point);
-	void setMutationRate( float mutRate );
+	void setCrossoverPoint(int );
+	void setMutationRate( float );
+	void calculateFitness(float);
 	
-	void calculateFitness();
-	void calculateChromosomeLength();
-
 	/*	Based on the mutation rate, this function will
 			mutate parts of the chromosome. There is a 
 			statistical component to this function, so it

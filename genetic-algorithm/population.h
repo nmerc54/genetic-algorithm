@@ -1,5 +1,3 @@
-#include "node.cpp"
-
 class population{
 private:
 	node* node_array;			/* Population of Chromosomes */
