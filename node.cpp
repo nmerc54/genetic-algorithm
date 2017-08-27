@@ -8,6 +8,8 @@ node::node( string chromosome ){
 	_mutation_rate    = 0;	// Default
 	_fitness          = 0.000;	// Default
 
+	srand(time(NULL));
+
 }
 
 
@@ -69,19 +71,26 @@ void node::setMutationRate(float rate){
 
 
 void node::mutate(){
-	/* Must seed outside of function */
-	srand(time(NULL));	
 
-	for(int i = 0; i < this->getChromosomeLength(); i++){
-	
-		if chance( this->getMutationRate() )
-			/* Flip the bit */
+	int length = this->getChromosomeLength();
+	char new_chrom[ length + 1 ];
+
+	for(int i = 0; i < length; i++){
+		if (chance( this->getMutationRate() ))
 			
-		else
-			/* Copy the bit */
-				
+			/* Flip the bit */
+			new_chrom[i] = flip_bit( this->getChromosome()[i] );
 
+		else
+			
+			/* Copy the bit */
+			new_chrom[i] = this->getChromosome()[i];
 	}
+	
+	new_chrom[ length ] = '\0';
+	string new_chrom_str(new_chrom);
+
+	_chromosome = new_chrom_str;
 
 }
 
