@@ -4,13 +4,13 @@ private:
 	int    _chromosome_length;
 	int    _crossover_point;
 	float  _fitness;
-	float  _mutation_rate;
+	int    _mutation_rate;
 
 public:
 	node( string chromosome );
 
 	float getFitness();
-	float getMutationRate();
+	int getMutationRate();
 	int getCrossoverPoint();
 	int getChromosomeLength();
 	string getChromosome();

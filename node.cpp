@@ -5,8 +5,8 @@ node::node( string chromosome ){
 	_chromosome = chromosome;
 	_chromosome_length = chromosome.length();
 	_crossover_point	= 0;			// Default
-	_mutation_rate 			= 0.000;	// Default
-	_fitness 						= 0.000;	// Default
+	_mutation_rate    = 0;	// Default
+	_fitness          = 0.000;	// Default
 
 }
 
@@ -47,7 +47,7 @@ string node::getChromosome(){
 }
 
 
-float node::getMutationRate(){
+int node::getMutationRate(){
 
 	return _mutation_rate;
 
@@ -69,7 +69,35 @@ void node::setMutationRate(float rate){
 
 
 void node::mutate(){
+	/* Must seed outside of function */
+	srand(time(NULL));	
 
-	true;
+	for(int i = 0; i < this->getChromosomeLength(); i++){
+	
+		if chance( this->getMutationRate() )
+			/* Flip the bit */
+			
+		else
+			/* Copy the bit */
+				
+
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
