@@ -4,9 +4,9 @@ node::node( string chromosome ){
 
 	_chromosome = chromosome;
 	_chromosome_length = chromosome.length();
-	_crossover_point	= 0;			// Default
-	_mutation_rate    = 0;	// Default
-	_fitness          = 0.000;	// Default
+	_crossover_point   = 0;     // Default
+	_mutation_rate     = 0;     // Default
+	_fitness           = 0.000; // Default
 
 	srand(time(NULL));
 
